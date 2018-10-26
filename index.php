@@ -47,8 +47,6 @@
 	$clientip = getIP();
 	$uri = $_SERVER["REQUEST_URI"];
 	$host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
-
-    //error_log($clientip.' -> ' . $host . $uri . '  ' .$server_protocol,3,'/tmp/wechat.txt');
     
 	if ($host == "www.apple.com")
 	{
