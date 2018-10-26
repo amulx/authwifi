@@ -24,10 +24,9 @@ function getIP() {
 }
 $client_ip = getIP();
 
-$cmd_str = 'sudo ipset add amu '. $client_ip;
-exec($cmd_str,$output,$return_val);
-error_log('i am getInfo'.PHP_EOL,3,'/tmp/wechat.txt');
-error_log(var_export($_GET,true).PHP_EOL,3,'/tmp/wechat.txt');
+// 业务逻辑
+// do something
+
 /**
 	参数		说明
 	extend	为上文中调用呼起微信JSAPI时传递的extend参数，这里原样回传给商家主页
@@ -106,11 +105,10 @@ function https_request($url,$data=null)
     ]
 }
 */
-header('HTTP/1.1 200 OK');die();
+
 // 4 判断是否关注
 if ($userInfo_data['subscribe']) {
-	$cmd_str = 'sudo ipset add amu '. $_GET['extend'];
-	exec($cmd_str,$output,$return_val);
+	// do something
 	header('HTTP/1.1 200 OK');
 	header('Location: http://www.example.org/');
 } else {
