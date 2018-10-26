@@ -24,10 +24,10 @@ function getIP() {
 
 $client_ip = getIP();
 
-$weixin_config_arr['appId'] = 'wx4d6bbde999d26dc6';
-$weixin_config_arr['shop_id'] = '992238';
-$weixin_config_arr['ssid'] = 'xy215';
-$weixin_config_arr['secretkey'] = 'caeaf7c612639f6a563cd135fca2c5c8';
+$weixin_config_arr['appId'] = 'xxx';
+$weixin_config_arr['shop_id'] = 'xxx';
+$weixin_config_arr['ssid'] = 'xxx';
+$weixin_config_arr['secretkey'] = 'xxxxxxxx';
 $weixin_config_arr['authUrl'] = 'http://'.$_SERVER['SERVER_ADDR'].'/getInfo.php';
 
 $timestamp= (time()) * 1000;
@@ -47,13 +47,10 @@ $query_arr = [
     'ssid' => $weixin_config_arr['ssid']
 ];
 
-// 3、临时开放该ip地址的所有网络权限  当在60s内未点击微信收回网络权限
-$cmd_str = 'sudo ipset add authed_set '. $client_ip . ' timeout 10';
-
-exec($cmd_str,$output,$return_val);
+// 3、业务逻辑
+// do something
 
 $weichaturl = "https://wifi.weixin.qq.com/operator/callWechat.xhtml?".http_build_query($query_arr).'&mac='.$mac.'&bssid='.$bssid;
 
 $result = array("result"=>"success","callback"=>"weichatLogin",'url'=>"https://wifi.weixin.qq.com/operator/callWechat.xhtml?".http_build_query($query_arr).'&mac='.$mac.'&bssid='.$bssid);
-error_log(var_export($result,true).PHP_EOL,3,'/tmp/wechat.txt');
 echo json_encode($result);
