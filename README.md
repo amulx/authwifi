@@ -1,0 +1,2 @@
+# authwifi
+wechat auth wifi
