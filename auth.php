@@ -1,10 +1,9 @@
 <?php
 $name = $_POST['name'];
 $password = $_POST['password'];
-if ($name == 'bd' && $password == 'bd') {
-	$cmd = 'sudo ipset add amu '. getIP();
-	exec($cmd);
-	echo '<script> location.href = "https://www.baidu.com/";</script>';
+if ($name == 'xxx' && $password == 'xxxxxxxxx') {
+	// do something
+	echo '<script> location.href = "https://www.you domain.com/";</script>';
 } else {
 	echo '<script> alert("fuck gay");location.href = "index.php";</script>';
 }
